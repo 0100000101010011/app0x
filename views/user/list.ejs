@@ -1,0 +1,45 @@
+<%- include('../layouts/header') %>
+
+<div class="overflow0">
+    <table class="mui-table mui-table--bordered width1 border0">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+
+        <% if (data) { %>
+            <% data.forEach(function(user){ %>
+                <tr class="stripe">
+                    <td>
+                        <%= user.id %>
+                    </td>
+                    <td>
+                        <%= user.name %>
+                    </td>
+                    <td>
+                        <%= user.age %>
+                    </td>
+                    <td>
+                        <%= user.email %>
+                    </td>
+                    <td><a href="/users/edit/<%= user.id %>">Edit</a></td>
+                    <td>
+
+                        <div class="inputfx1r">
+                            <form action="/users/delete/<%= user.id %>" method="post">
+                                <input type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" class="gray2 padding1 border0 red1h border1 border2h radius1 background0 background2h transition1">
+                                <input type="hidden" name="_method" value="DELETE">
+                            </form>
+                        </div>
+
+                    </td>
+                </tr>
+                <% }) %>
+            <% } %>
+    </table>
+</div>
+
+<%- include('../layouts/footer') %>

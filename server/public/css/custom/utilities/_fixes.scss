@@ -1,0 +1,11 @@
+/*for aos.js*/
+/*fixes issue where when you tap on input on the phone, it disappears*/
+html:not(.no-js) [data-aos^=fade][data-aos^=fade].aos-init {
+	opacity: 1;
+	-webkit-transform: none;
+	-ms-transform: none;
+	transform: none;
+}
+[data-aos] {
+	pointer-events: all;
+}

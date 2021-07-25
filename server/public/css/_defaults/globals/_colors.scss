@@ -1,0 +1,25 @@
+$white1: #fff;
+
+$gray1: #f2f2f2;
+$gray2: #989898;
+$gray3: #4e4e4e;
+
+$black1: #000;
+
+$blue1: #2196f3;
+$blue1-transparent: rgba(33, 150, 243, .02);
+$red1: #f2413a;
+$red1-transparent: rgba(242, 65, 58, .020);
+
+.white1 {color: $white1}
+
+.gray1 {color: $gray1}
+.gray2 {color: $gray2}
+.gray3 {color: $gray3}
+
+.black1 {color: $black1}
+
+.blue1 {color: $blue1;}
+.blue1h:hover {color: $blue1;}
+.red1 {color: $red1;}
+.red1h:hover {color: $red1;}
