@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const database = require('../../../src/server/mysql-ssh')
+const database = require('../../../src/server/database/mysql-ssh')
 // ...rest of the initial code omitted for simplicity.
 const { check, validationResult } = require('express-validator')
 const bodyParser = require('body-parser')

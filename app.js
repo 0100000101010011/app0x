@@ -1,7 +1,6 @@
 const SSH2Client = require('ssh2').Client
 const express = require('express')
 const bodyParser = require('body-parser')
-var path = require('path')
 
 //require our routes
 const index = require('./src/server/index')
@@ -18,7 +17,6 @@ app.use(bodyParser.json())
 
 //set ejs as our templating engine
 app.set('view engine', 'ejs')
-// app.set('views', path.join(__dirname, '../public/views'))
 
 //set our views
 app.use('/', index)
