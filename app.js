@@ -25,4 +25,4 @@ app.use('/users', users)
 //open up https to url in browser
 app.listen(80)
 
-// IMPORTANT, IS USING THE server-mysql-225 VMWARE VIRTUAL SERVER IN NUC
+// IMPORTANT, IS USING THE server-mysql VMWARE VIRTUAL SERVER IN NUC
