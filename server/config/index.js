@@ -1,5 +1,6 @@
 const config = {
   server: {
+    /*this host address is access to the is for the server-mysql vm in NUC VMWare */
     host: '192.168.1.253',
     port: 22,
     user: 'root',
