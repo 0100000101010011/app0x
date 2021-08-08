@@ -1,9 +1,9 @@
-const mysql = require('mysql2')
-const Client = require('ssh2').Client
-const ssh = new Client()
+const Client = require('ssh2').Client;
+const mysql = require('mysql2');
+const ssh = new Client();
 
 //import database configuration file with connection credentials
-const config = require('../config')
+const config = require('../config');
 
 //package the connection to the db variable
 const db = new Promise((resolve, reject) => {
@@ -17,7 +17,7 @@ const db = new Promise((resolve, reject) => {
         config.mysql.host,
         config.mysql.port,
         (err, stream) => {
-          if (err) throw err // SSH error: can also send error in promise ex. reject(err)
+          if (err) throw err; // SSH error: can also send error in promise ex. reject(err)
 
           //connect to database
           let connection = mysql.createConnection({
@@ -25,15 +25,15 @@ const db = new Promise((resolve, reject) => {
             password: config.database.password,
             database: config.database.name,
             stream: stream,
-          })
+          });
 
           // send connection back in variable depending on success or not
           connection.connect((err) => {
             //now we use connection() whenever we want to query the database
-            return !err ? resolve(connection) : reject(err)
-          })
+            return !err ? resolve(connection) : reject(err);
+          });
         }
-      )
+      );
     })
     .connect({
       //connect to physical or vm server
@@ -41,8 +41,8 @@ const db = new Promise((resolve, reject) => {
       port: config.server.port,
       username: config.server.user,
       password: config.server.password,
-    })
-})
+    });
+});
 
 //db module ready for import and use
-module.exports = db
+module.exports = db;

@@ -1,28 +1,27 @@
-const SSH2Client = require('ssh2').Client
-const express = require('express')
-const bodyParser = require('body-parser')
+const SSH2Client = require('ssh2').Client;
+const express = require('express');
 
-//require our routes
-const index = require('./src/server/index')
-const users = require('./src/server/routes/users')
+const app = express();
 
-const app = express()
+// parse any incoming JSON
+// ref https://stackoverflow.com/questions/66525078/bodyparser-is-deprecated
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-)
-app.use(bodyParser.json())
+// set ejs as our templating engine
+app.set('view engine', 'ejs');
 
-//set ejs as our templating engine
-app.set('view engine', 'ejs')
+// require our routes
+// load our homepage
+const index = require('./src/server/index');
+// load our users and database to access those users
+const users = require('./src/server/routes/users');
 
-//set our views
-app.use('/', index)
-app.use('/users', users)
+// set our views
+// the homepage
+app.use('/', index);
+// the users list page
+app.use('/users', users);
 
-//open up https to url in browser
-app.listen(80)
-
-// IMPORTANT, IS USING THE server-mysql VMWARE VIRTUAL SERVER IN NUC
+// open up https to url in browser
+app.listen(80);
