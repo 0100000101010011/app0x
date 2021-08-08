@@ -3,7 +3,7 @@ const Client = require('ssh2').Client
 const ssh = new Client()
 
 //import database configuration file with connection credentials
-const config = require('../config')
+const config = require('../server/config')
 
 //package the connection to the db variable
 const db = new Promise((resolve, reject) => {

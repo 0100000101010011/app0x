@@ -1,11 +1,16 @@
 const express = require('express')
 const app = express()
-const database = require('../public/mysql-ssh')
+const database = require('../../../src/server/mysql-ssh')
 // ...rest of the initial code omitted for simplicity.
 const { check, validationResult } = require('express-validator')
 const bodyParser = require('body-parser')
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+;(path = require('path')), //Utilities for dealing with file paths
+  // change the path to views from root directory to public/views
+  // res https://stackoverflow.com/questions/50893222/how-do-i-require-something-in-root-project-directory-from-inside-node-package-li
+  app.set('views', path.join(__dirname, '../../../public', 'views'))
 
 app.get('/', function (req, res, next) {
   database.then((connection, err) => {
