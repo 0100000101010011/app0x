@@ -1,45 +1,47 @@
 <%- include('../templates/header') %>
 
-<div class="overflow0">
-    <table class="mui-table mui-table--bordered width1 border0">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Email</th>
-            <th>Action</th>
-        </tr>
+    <div class="table__row">
+        <table class="mui-table mui-table--bordered">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
 
-        <% if (data) { %>
-            <% data.forEach(function(user){ %>
-                <tr class="stripe">
-                    <td>
-                        <%= user.id %>
-                    </td>
-                    <td>
-                        <%= user.name %>
-                    </td>
-                    <td>
-                        <%= user.age %>
-                    </td>
-                    <td>
-                        <%= user.email %>
-                    </td>
-                    <td><a href="/users/edit/<%= user.id %>">Edit</a></td>
-                    <td>
+            <% if (data) { %>
+                <% data.forEach(function(user){ %>
+                    <tr>
+                        <td>
+                            <%= user.id %>
+                        </td>
+                        <td>
+                            <%= user.name %>
+                        </td>
+                        <td>
+                            <%= user.age %>
+                        </td>
+                        <td>
+                            <%= user.email %>
+                        </td>
+                        <td><a href="/users/edit/<%= user.id %>">Edit</a></td>
+                        <td>
 
-                        <div class="inputfx1r">
-                            <form action="/users/delete/<%= user.id %>" method="post">
-                                <input type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" class="gray2 padding1 border0 red1h border1 border2h radius1 background0 background2h transition1">
-                                <input type="hidden" name="_method" value="DELETE">
-                            </form>
-                        </div>
+                            <div class="form--table">
+                                <form class="form form--theme-app0 form--simple" action="/users/delete/<%= user.id %>"
+                                    method="post">
+                                    <input class="form__submit" type="submit" name="delete" value='Delete'
+                                        onClick="return confirm('Are you sure you want to delete?')">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                </form>
+                            </div>
 
-                    </td>
-                </tr>
-                <% }) %>
-            <% } %>
-    </table>
-</div>
+                        </td>
+                    </tr>
+                    <% }) %>
+                        <% } %>
+        </table>
+    </div>
 
-<%- include('../templates/footer') %>
+    <%- include('../templates/footer') %>

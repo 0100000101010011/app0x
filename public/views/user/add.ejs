@@ -1,44 +1,42 @@
 <%- include('../templates/header') %>
 
-<form action="/users/add" method="post" name="form1" autocomplete="off">
-    <table>
-        <tr>
-            <td>Name:</td>
-            <td>
-                <div class="inputfx1b">
-                    <input type="text" name="name" id="name" value="<%= name %>" autocomplete="nope" autofocus class="gray3 padding1 border0 border1 border1h radius1 cursor1 transition1 input-field">
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>Age:</td>
-            <td>
-                <div class="inputfx1b">
-                    <input type="text" name="age" id="age" value="<%= age %>" class="gray3 padding1 border0 border1 border1h radius1 cursor1 transition1 input-field">
-                </div>
+    <form action="/users/add" method="post" name="form1" autocomplete="off">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <div class="form__input">
+                        <input type="text" name="name" id="name" value="<%= name %>" autocomplete="nope" autofocus>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td>
+                    <div class="form__input">
+                        <input type="text" name="age" id="age" value="<%= age %>">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <!-- https://gist.github.com/runspired/b9fdf1fa74fc9fb4554418dea35718fe -->
+                    <input type="text" name="fake-email-remembered" id="fake-email" style="display:none;">
+                    <div class="form__input">
+                        <input type="text" name="email" id="email" value="<%= email %>" autocomplete="nope">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="form__input">
+                        <input class="form__submit" type="submit" name="Submit" value="Add">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
 
-            </td>
-        </tr>
-        <tr>
-            <td>Email:</td>
-            <td>
-                <!-- https://gist.github.com/runspired/b9fdf1fa74fc9fb4554418dea35718fe -->
-                <input type="text" name="fake-email-remembered" id="fake-email" style="display:none;">
-                <div class="inputfx1b">
-                    <input type="text" name="email" id="email" value="<%= email %>" autocomplete="nope" class="gray3 padding1 border0 border1 border1h radius1 cursor1 transition1 input-field">
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <div class="inputfx1b">
-                    <!-- <input type="submit" name="Submit" value="Add" class="blue1 blue1h border0 border1 border1h border1f radius1 background0 background1h background1f transition1"> -->
-                    <input type="submit" name="Submit" value="Add" class="blue1 blue1h border0 border1 border1h border1f radius1 background0 background1h background1f transition1 mui-btn mui-btn--small mui-btn--primary mui-btn--raised">
-                </div>
-            </td>
-        </tr>
-    </table>
-</form>
-
-<%- include('../templates/footer') %>
+    <%- include('../templates/footer') %>

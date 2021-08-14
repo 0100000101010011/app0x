@@ -1,0 +1,83 @@
+// Form
+
+.form {
+}
+
+.form--theme-app0 {
+}
+
+.form--simple {
+}
+
+.form__input {
+  position: relative;
+  width: min-content;
+}
+.form__input:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 110%;
+  height: 140%;
+  border: 1px solid rgba(33, 150, 243, 0);
+  transition: 0.075s ease;
+}
+
+td:hover > .form__input:before {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(33, 150, 243, 0.4);
+}
+
+.form__submit {
+}
+
+.form__submit--disabled {
+}
+
+// Table
+
+.table {
+  overflow-x: auto;
+}
+
+.table__row tr:nth-child(even) {
+  background-color: $gray1;
+}
+
+.form--table {
+  position: relative;
+  width: min-content;
+}
+
+.form--table:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: initial;
+  width: 110%;
+  height: 140%;
+  border: 1px solid rgba(242, 65, 58, 0);
+  transition: 0.075s ease;
+}
+
+td:hover .form--table:before {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(242, 65, 58, 0.4);
+}
+
+.form--table .form__submit,
+.form--table .form__submit:hover {
+  color: $red1;
+  border: 1px solid $red1;
+}

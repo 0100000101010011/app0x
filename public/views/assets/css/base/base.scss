@@ -1,0 +1,76 @@
+// Colors
+$white1: #fff;
+
+$gray1: #f2f2f2;
+$gray2: #989898;
+$gray3: #4e4e4e;
+
+$black1: #000;
+
+$blue1: #2196f3;
+$blue1-transparent: rgba(33, 150, 243, 0.02);
+$red1: #f2413a;
+$red1-transparent: rgba(242, 65, 58, 0.02);
+
+// Base
+
+body {
+  color: $gray3;
+  outline: none;
+  border-collapse: collapse;
+}
+
+footer p {
+  font-size: 0.7rem;
+}
+
+//remove the focus from all link elements, brought in by another stylesheet
+a:focus {
+  outline: none;
+}
+
+input {
+  color: $gray3;
+  outline: none;
+  border-collapse: collapse;
+  border: 1px solid $gray2;
+  border-radius: 2px;
+  caret-color: $blue1;
+  transition: 0.1s ease;
+  padding: 2px 3px;
+  background: none;
+}
+
+input:focus,
+input:hover {
+  border: 1px solid $blue1;
+  background: $blue1-transparent;
+  transition: 0.1s ease;
+}
+
+input[type='submit'] {
+  color: $blue1;
+  border: 1px solid $gray2;
+  border-radius: 2px;
+  padding: 2px 3px;
+}
+
+input[type='submit']:focus,
+input[type='submit']:hover {
+  color: $blue1;
+  border: 1px solid $blue1;
+}
+
+table {
+  outline: none;
+  border-collapse: collapse;
+}
+
+.block {
+}
+
+.block__elem {
+}
+
+.block__elem--mod {
+}

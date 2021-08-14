@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "prettier": "prettier --write ./**/*.js",
-    "compile": "node-sass --output-style compressed public/views/assets/css/custom/utilities/_bundler.scss public/views/assets/css/_bundled/style.min.css",
+    "compile": "node-sass --output-style compressed public/views/assets/css/_bundler.scss public/views/assets/css/_bundled/style.min.css",
     "build": "npm run prettier && npm run compile && nodemon app",
     "app": "npm run prettier && npm run compile && node app"
   },

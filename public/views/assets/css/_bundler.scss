@@ -1,0 +1,15 @@
+/* Compiles all .sass files into one final style.min.css file and puts it in css/_bundled */
+
+@import 'base/base';
+
+@import 'component/component';
+
+@import 'layout/layout';
+
+@import 'state/state';
+
+@import 'theme/_default/_libraries/_aos';
+@import 'theme/_default/_libraries/_mui';
+@import 'theme/_default/_default';
+
+@import '_fixes';

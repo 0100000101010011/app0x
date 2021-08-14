@@ -23,5 +23,5 @@ app.use('/', index);
 // the users list page
 app.use('/users', users);
 
-// open up https to url in browser
+// open up http to url in browser (https is port 8080)
 app.listen(80);
