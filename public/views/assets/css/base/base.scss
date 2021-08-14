@@ -1,4 +1,5 @@
 // Colors
+
 $white1: #fff;
 
 $gray1: #f2f2f2;
@@ -24,7 +25,7 @@ footer p {
   font-size: 0.7rem;
 }
 
-//remove the focus from all link elements, brought in by another stylesheet
+// remove the focus from all link elements, brought in by another stylesheet
 a:focus {
   outline: none;
 }
@@ -66,11 +67,8 @@ table {
   border-collapse: collapse;
 }
 
-.block {
-}
+.block {}
 
-.block__elem {
-}
+.block__elem {}
 
-.block__elem--mod {
-}
+.block__elem--mod {}
