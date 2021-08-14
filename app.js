@@ -14,12 +14,14 @@ app.set('view engine', 'ejs');
 // require our routes
 // load our homepage
 const index = require('./src/server/index');
+
 // load our users and database to access those users
 const users = require('./src/server/routes/users');
 
 // set our views
 // the homepage
 app.use('/', index);
+
 // the users list page
 app.use('/users', users);
 

@@ -2,15 +2,15 @@ const Client = require('ssh2').Client;
 const mysql = require('mysql2');
 const ssh = new Client();
 
-//import database configuration file with connection credentials
+// import database configuration file with connection credentials
 const config = require('../config');
 
-//package the connection to the db variable
+// package the connection to the db variable
 const db = new Promise((resolve, reject) => {
-  //ssh shell into the server/vm
+  // ssh shell into the server/vm
   ssh
     .on('ready', () => {
-      //connect to mysql
+      // connect to mysql
       ssh.forwardOut(
         '',
         '',
@@ -19,7 +19,7 @@ const db = new Promise((resolve, reject) => {
         (err, stream) => {
           if (err) throw err; // SSH error: can also send error in promise ex. reject(err)
 
-          //connect to database
+          // connect to database
           let connection = mysql.createConnection({
             user: config.database.user,
             password: config.database.password,
@@ -29,14 +29,14 @@ const db = new Promise((resolve, reject) => {
 
           // send connection back in variable depending on success or not
           connection.connect((err) => {
-            //now we use connection() whenever we want to query the database
+            // now we use connection() whenever we want to query the database
             return !err ? resolve(connection) : reject(err);
           });
         }
       );
     })
     .connect({
-      //connect to physical or vm server
+      // connect to physical or vm server
       host: config.server.host,
       port: config.server.port,
       username: config.server.user,
@@ -44,5 +44,5 @@ const db = new Promise((resolve, reject) => {
     });
 });
 
-//db module ready for import and use
+// db module ready for import and use
 module.exports = db;
