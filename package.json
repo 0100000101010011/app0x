@@ -16,15 +16,15 @@
     "url": "https://seggido.atlassian.net/jira/software/projects/APP0/boards/21"
   },
   "dependencies": {
-    "ejs": "^3.0.1",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "express-validator": "^6.5.0",
-    "mysql2": "^2.1.0",
-    "node-sass": "^4.14.1",
-    "ssh2": "^0.8.9"
+    "express-validator": "^6.12.1",
+    "mysql2": "^2.3.0",
+    "node-sass": "^6.0.1",
+    "ssh2": "^1.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2",
-    "prettier": "^2.0.5"
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
   }
 }
