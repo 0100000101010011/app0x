@@ -41,7 +41,7 @@ For MySQL on a remote VM on the same network
 
 - All files involved
   - Apps\app0\server\config\index.js
-  - Apps\app0\server\public\db-remote-vm-mysql-ssh.js
+  - Apps\app0\server\public\remote-mysql.js
   - Apps\app0\server\routes\users.js
 
 You can use MySQL Workbench to help with connecting to the database.

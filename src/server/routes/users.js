@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const database = require('../../../src/server/database/db-remote-vm-mysql-ssh');
+const database = require('../../../src/server/database/remote-mysql');
 // ...rest of the initial code omitted for simplicity.
 const { check, validationResult } = require('express-validator');
 const bodyParser = require('body-parser');
