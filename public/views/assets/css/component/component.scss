@@ -1,79 +1,10 @@
-// Form
-
-.form {}
-
-.form--theme-app0 {}
-
-.form--simple {}
-
-.form__input {
-  position: relative;
-  width: min-content;
-}
-
-.form__input:before {
-  top: 50%;
-  left: 50%;
-  content: '';
-  z-index: -1;
-  width: 110%;
-  height: 140%;
-  position: absolute;
-  display: inline-block;
-  transition: 0.075s ease;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgba(33, 150, 243, 0);
-}
-
-td:hover>.form__input:before {
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  border: 1px solid rgba(33, 150, 243, 0.4);
-}
-
-.form__submit {}
-
-.form__submit--disabled {}
-
 // Table
-
-.table {
-  overflow-x: auto;
-}
 
 .table__row tr:nth-child(even) {
   background-color: $gray1;
 }
 
-.form--table {
-  position: relative;
-  width: min-content;
-}
-
-.form--table:before {
-  top: 50%;
-  left: 50%;
-  content: '';
-  width: 110%;
-  height: 140%;
-  z-index: initial;
-  position: absolute;
-  display: inline-block;
-  transition: 0.075s ease;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgba(242, 65, 58, 0);
-}
-
-td:hover .form--table:before {
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  border: 1px solid rgba(242, 65, 58, 0.4);
-}
-
-.form--table .form__submit,
-.form--table .form__submit:hover {
+.form__table input[type='submit'] {
   color: $red1;
   border: 1px solid $red1;
 }
