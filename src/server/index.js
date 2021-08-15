@@ -15,4 +15,13 @@ app.get('/', (req, res) => {
 // use any static files in /views/assets folder, like css
 app.use('/views', express.static('public/views'));
 
+// create a new route /assets, and route any requests for files found in node_modules to /assets
+// so the file path to any file like a js or css file anywhere in node_modules directory will look like
+// /assets/scripts.js
+// res https://expressjs.com/en/starter/static-files.html
+app.use(
+  '/aos',
+  express.static(path.join(__dirname, '../../node_modules/aos/dist'))
+);
+
 module.exports = app;
