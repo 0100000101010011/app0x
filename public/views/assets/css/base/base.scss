@@ -28,6 +28,10 @@ footer p {
     text-align: center;
 }
 
+footer p a {
+  color: $gray2;
+}
+
 p {
   letter-spacing: .1em;
   font-family: "Courier New", "Courier", monospace;
