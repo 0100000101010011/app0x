@@ -33,9 +33,11 @@ p {
   font-family: "Courier New", "Courier", monospace;
 }
 
+// res https://stackoverflow.com/questions/25704650/disable-blue-highlight-when-touch-press-object-with-cursorpointer
 a {
   text-decoration: none;
   color: $blue1;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 
 // remove the focus from all link elements, brought in by another stylesheet
