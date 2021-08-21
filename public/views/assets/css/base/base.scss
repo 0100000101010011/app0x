@@ -24,7 +24,7 @@ body {
 }
 
 footer p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-align: center;
 }
 
@@ -100,3 +100,27 @@ table {
 td, th {
   letter-spacing: .1em;
 }
+
+/* ===== Scrollbar CSS ===== */
+// res https://codepen.io/stephenpaton-tech/full/JjRvGmY
+  /* Firefox */
+  * {
+    scrollbar-width: 10px;
+    scrollbar-color: $blue1 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 9px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: $blue1;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
