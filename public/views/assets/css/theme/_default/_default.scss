@@ -129,13 +129,14 @@
   transform: rotate(
 -45deg
 ) scale(var(--ggs, 1));
-  width: 12px;
+  width: 10px;
   height: 3px;
   border-right: 2px solid transparent;
   box-shadow: 0 0 0 2px, inset -2px 0 0;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   margin: 0 auto;
+  bottom: 3px;
 }
 
 .gg-pen {
@@ -180,11 +181,11 @@
   position: relative;
   display: block;
   transform: scale(var(--ggs, 1));
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border: 2px solid;
   border-radius: 22px;
-  color: $red1;
+  color: #f2413a;
   cursor: pointer;
 }
 
@@ -193,10 +194,10 @@
   display: block;
   box-sizing: border-box;
   position: absolute;
-  width: 10px;
+  width: 8px;
   height: 2px;
   background: currentColor;
   border-radius: 5px;
-  top: 8px;
+  top: 7px;
   left: 4px;
 }
