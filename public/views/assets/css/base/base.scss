@@ -19,15 +19,38 @@ body {
   color: $gray3;
   outline: none;
   border-collapse: collapse;
+  font-family: Arial, Verdana, Tahoma;
+  font-size: 14px;
 }
 
 footer p {
   font-size: 0.7rem;
 }
 
+p {
+  letter-spacing: .1em;
+  font-family: "Courier New", "Courier", monospace;
+}
+
+a {
+  text-decoration: none;
+  color: $blue1;
+}
+
 // remove the focus from all link elements, brought in by another stylesheet
 a:focus {
   outline: none;
+}
+
+nav a {
+  font-weight: 700;
+  font-family: "Courier New", "Courier", monospace;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1.5em;
 }
 
 input {
@@ -40,6 +63,7 @@ input {
   transition: 0.1s ease;
   padding: 2px 3px;
   background: none;
+  letter-spacing: .1em;
 }
 
 input:focus,
@@ -65,4 +89,8 @@ input[type='submit']:hover {
 table {
   outline: none;
   border-collapse: collapse;
+}
+
+td, th {
+  letter-spacing: .1em;
 }

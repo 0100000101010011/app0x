@@ -1,5 +1,10 @@
 // Table
 
+.table__row td, 
+.table__row th {
+  padding: .5em;
+}
+
 .table__row tr:nth-child(even) {
   background-color: $gray1;
 }
