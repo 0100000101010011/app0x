@@ -1,7 +1,7 @@
 <%- include('../templates/header') %>
 
-    <div class="table__row">
-        <table class="mui-table mui-table--bordered">
+    <section class="component__table--list">
+        <table>
             <tr>
                 <!-- <th>Edit</th>
                 <th>Delete</th> -->
@@ -13,9 +13,9 @@
 
             <% if (data) { %>
                 <% data.forEach(function(user){ %>
-                    <tbody class="user-details">
+                    <tbody class="table__tbody">
 
-                        <tr class="basic-details">
+                        <tr class="tbody__row--1">
                             <td>
                                 <%= user.name %>
                             </td>
@@ -24,10 +24,12 @@
                             </td>
                         </tr>
 
-                        <tr class="more-details">
+                        <tr class="tbody__row--2">
+
                             <td><a href="/users/edit/<%= user.id %>"><i class="gg-pen"></i></a></td>
+
                             <td>
-                                <div class="form__table">
+                                <div>
                                     <form action="/users/delete/<%= user.id %>" method="post">
                                         <button type="submit" name="delete" value='Delete'
                                             onClick="return confirm('Are you sure you want to delete?')">
@@ -38,18 +40,20 @@
                                     </form>
                                 </div>
                             </td>
+
                             <td>
                                 Age <%= user.age %>
                             </td>
                             <td>
                                 ID <%= user.id %>
                             </td>
+
                         </tr>
                     </tbody>
 
                     <% }) %>
                         <% } %>
         </table>
-    </div>
+    </section>
 
     <%- include('../templates/footer') %>

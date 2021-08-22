@@ -1,6 +1,6 @@
 {
   "name": "app0",
-  "version": "0.7.33",
+  "version": "0.7.34",
   "description": "A SQL database manager with a snappy UI.",
   "main": "app.js",
   "scripts": {

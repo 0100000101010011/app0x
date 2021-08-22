@@ -19,23 +19,20 @@ $red1-transparent: rgba(242, 65, 58, 0.02);
 body {
   color: $gray3;
   outline: none;
-  border-collapse: collapse;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: 'Courier New', 'Courier', monospace;
   font-size: 14px;
-  overflow: scroll; /* Show scrollbars */
+  // show scrollbars, a little hack because you'll notice a jerk movement of the view when the scrollbars appear and disappear between switching pages/views, it's the scrollbars appearing and disappearing causing that jerkiness
+  overflow: scroll;
+  display: grid;
+  background: #f5f5f5;
+  margin: 40px 0;
+  background-color: #cccccc;
+  background-image: url("https://www.transparenttextures.com/patterns/rubber-grip.png");
 }
 
-footer p {
-    font-size: 0.7rem;
-    text-align: center;
-}
-
-footer p a {
-  color: $gray2;
-}
-
-p, td {
-  letter-spacing: .1em;
+p,
+td {
+  letter-spacing: 0.1em;
   font-family: Arial, Verdana, Tahoma;
 }
 
@@ -43,21 +40,16 @@ p, td {
 a {
   text-decoration: none;
   color: $blue1;
-  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+  // disable blue highlight
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
-// remove the focus from all link elements, brought in by another stylesheet
-a:focus {
-  outline: none;
-}
-
-nav a {
-  font-weight: 700;
-  font-family: "Courier New", "Courier", monospace;
-  // color: #fff;
-}
-
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 1.3em;
@@ -72,14 +64,13 @@ button {
 input {
   color: $gray3;
   outline: none;
-  border-collapse: collapse;
   border: 1px solid $gray2;
   border-radius: 2px;
   caret-color: $blue1;
   transition: 0.1s ease;
   padding: 2px 3px;
   background: none;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 
 input:focus,
@@ -91,9 +82,6 @@ input:hover {
 
 input[type='submit'] {
   color: $blue1;
-  border: 1px solid $gray2;
-  border-radius: 2px;
-  padding: 2px 3px;
 }
 
 input[type='submit']:focus,
@@ -101,32 +89,3 @@ input[type='submit']:hover {
   color: $blue1;
   border: 1px solid $blue1;
 }
-
-table {
-  outline: none;
-  border-collapse: collapse;
-}
-
-/* ===== Scrollbar CSS ===== */
-// res https://codepen.io/stephenpaton-tech/full/JjRvGmY
-  /* Firefox */
-  * {
-    scrollbar-width: 10px;
-    scrollbar-color: $blue1 #ffffff;
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 10px;
-    height: 9px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: $blue1;
-    border-radius: 10px;
-    border: 3px solid #ffffff;
-  }

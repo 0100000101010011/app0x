@@ -1,0 +1,20 @@
+.wrapper.scale {
+    width: 960px;
+    transition: 0.1s ease;
+  }
+
+  .tbody__row--2 {
+    visibility: hidden;
+    height: 0;
+    transition: 0.1s ease;
+}
+
+  .tbody__row--2.show {
+    visibility: visible;
+    height: 41px;
+    transition: 0.1s ease;
+}
+
+.hide {
+    display: none;
+}
