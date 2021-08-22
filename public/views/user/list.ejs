@@ -3,24 +3,33 @@
     <div class="table__row">
         <table class="mui-table mui-table--bordered">
             <tr>
-                <th>Edit</th>
-                <th>Delete</th>
+                <!-- <th>Edit</th>
+                <th>Delete</th> -->
                 <th>Name</th>
-                <th>Age</th>
+                <!-- <th>Age</th> -->
                 <th>Email</th>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
             </tr>
 
             <% if (data) { %>
                 <% data.forEach(function(user){ %>
+
                     <tr>
+                        <td>
+                            <%= user.name %>
+                        </td>
+                        <td>
+                            <%= user.email %>
+                        </td>
+                    </tr>
+
+
+
+                    <tr class="more-options">
                         <td><a href="/users/edit/<%= user.id %>"><i class="gg-pen"></i></a></td>
                         <td>
                             <div class="form__table">
                                 <form action="/users/delete/<%= user.id %>" method="post">
-                                    <!-- <input type="submit" name="delete" value='Delete'
-                                        onClick="return confirm('Are you sure you want to delete?')"> -->
-
                                     <button type="submit" name="delete" value='Delete'
                                         onClick="return confirm('Are you sure you want to delete?')">
                                         <i class="gg-remove"></i>
@@ -31,16 +40,10 @@
                             </div>
                         </td>
                         <td>
-                            <%= user.name %>
+                            Age <%= user.age %>
                         </td>
                         <td>
-                            <%= user.age %>
-                        </td>
-                        <td>
-                            <%= user.email %>
-                        </td>
-                        <td>
-                            <%= user.id %>
+                            ID <%= user.id %>
                         </td>
                     </tr>
                     <% }) %>

@@ -1,15 +1,28 @@
 // Table
 
-.table__row td, 
-.table__row th {
-  padding: .5em;
+.table__row td, .table__row th {
+  padding: 0.6em 0.4em;
 }
 
-.table__row tr:nth-child(even) {
-  background-color: $gray1;
-}
+// .table__row > table > tr:nth-child(even) {
+//   background-color: $gray1;
+// }
 
 .form__table input[type='submit'] {
   color: $red1;
   border: 1px solid $red1;
+}
+
+div.table__row > table > tbody > tr:nth-child(even) {
+  background-color: $gray1;
+}
+
+body > main > div > div > table > tbody > tr {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+body > main > div > div > table > tbody > tr > td {
+  justify-self: center;
+    align-self: center;
 }
