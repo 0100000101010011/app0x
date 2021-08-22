@@ -20,7 +20,7 @@ body {
   color: $gray3;
   outline: none;
   border-collapse: collapse;
-  font-family: Arial, Verdana, Tahoma;
+  font-family: "Courier New", "Courier", monospace;
   font-size: 14px;
   overflow: scroll; /* Show scrollbars */
 }
@@ -36,7 +36,7 @@ footer p a {
 
 p {
   letter-spacing: .1em;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: Arial, Verdana, Tahoma;
 }
 
 // res https://stackoverflow.com/questions/25704650/disable-blue-highlight-when-touch-press-object-with-cursorpointer
@@ -106,9 +106,9 @@ table {
   border-collapse: collapse;
 }
 
-td, th {
-  letter-spacing: .1em;
-}
+// td, th {
+//   letter-spacing: .1em;
+// }
 
 /* ===== Scrollbar CSS ===== */
 // res https://codepen.io/stephenpaton-tech/full/JjRvGmY

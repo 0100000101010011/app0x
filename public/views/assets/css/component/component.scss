@@ -9,8 +9,9 @@
   border: 1px solid $red1;
 }
 
-div.table__row > table > tbody > tr:nth-child(even) {
+div.table__row > table tbody.user-details > tr:nth-child(even) {
   background-color: $gray1;
+  background-color: $white1;
 }
 
 body > main > div > div > table > tbody > tr {
@@ -21,4 +22,8 @@ body > main > div > div > table > tbody > tr {
 body > main > div > div > table > tbody > tr > td {
   justify-self: center;
     align-self: center;
+}
+
+tbody.user-details:nth-child(even) > tr.basic-details {
+  background-color: $gray1;
 }

@@ -31,7 +31,8 @@ background-image: url("https://www.transparenttextures.com/patterns/rubber-grip.
     justify-self: center;
     align-self: center;
     background: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid $blue1;
+    border: 1px solid $gray2;
     border-radius: 10px;
     padding: 15px;
 
@@ -47,4 +48,25 @@ background-image: url("https://www.transparenttextures.com/patterns/rubber-grip.
 
 .wrapper .table__row table {
     display: grid;
+}
+
+// this is hacky, using overflow here, figure out why those scrollbars are showing up and fix this on the user list page
+.user-details {
+    overflow: hidden;
+}
+
+.basic-details {
+    cursor: pointer;
+}
+
+.more-details {
+    visibility: hidden;
+    height: 0;
+    transition: 0.1s ease;
+}
+
+.show {
+    visibility: visible;
+    height: 41px;
+    transition: 0.1s ease;
 }

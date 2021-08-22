@@ -13,37 +13,40 @@
 
             <% if (data) { %>
                 <% data.forEach(function(user){ %>
+                    <tbody class="user-details">
 
-                    <tr>
-                        <td>
-                            <%= user.name %>
-                        </td>
-                        <td>
-                            <%= user.email %>
-                        </td>
-                    </tr>
+                        <tr class="basic-details">
+                            <td>
+                                <%= user.name %>
+                            </td>
+                            <td>
+                                <%= user.email %>
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td><a href="/users/edit/<%= user.id %>"><i class="gg-pen"></i></a></td>
-                        <td>
-                            <div class="form__table">
-                                <form action="/users/delete/<%= user.id %>" method="post">
-                                    <button type="submit" name="delete" value='Delete'
-                                        onClick="return confirm('Are you sure you want to delete?')">
-                                        <i class="gg-remove"></i>
-                                    </button>
+                        <tr class="more-details">
+                            <td><a href="/users/edit/<%= user.id %>"><i class="gg-pen"></i></a></td>
+                            <td>
+                                <div class="form__table">
+                                    <form action="/users/delete/<%= user.id %>" method="post">
+                                        <button type="submit" name="delete" value='Delete'
+                                            onClick="return confirm('Are you sure you want to delete?')">
+                                            <i class="gg-remove"></i>
+                                        </button>
 
-                                    <input type="hidden" name="_method" value="DELETE">
-                                </form>
-                            </div>
-                        </td>
-                        <td>
-                            Age <%= user.age %>
-                        </td>
-                        <td>
-                            ID <%= user.id %>
-                        </td>
-                    </tr>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                    </form>
+                                </div>
+                            </td>
+                            <td>
+                                Age <%= user.age %>
+                            </td>
+                            <td>
+                                ID <%= user.id %>
+                            </td>
+                        </tr>
+                    </tbody>
+
                     <% }) %>
                         <% } %>
         </table>
