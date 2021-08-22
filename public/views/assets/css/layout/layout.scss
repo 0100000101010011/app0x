@@ -3,12 +3,15 @@ body {
 }
 
 .wrapper {
-    max-width: 300px;
-    width: 300px;
+    max-width: 270px;
+    width: 270px;
     justify-self: center;
     align-self: center;
     background: #fff;
     margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
 }
 
 .wrapper .table__row {
