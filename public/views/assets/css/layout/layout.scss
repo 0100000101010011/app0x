@@ -14,3 +14,7 @@ body {
 .wrapper .table__row {
     overflow-x: scroll;
 }
+
+.wrapper .table__row table {
+    display: grid;
+}
