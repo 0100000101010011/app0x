@@ -204,3 +204,52 @@
   top: 7px;
   left: 4px;
 }
+
+ // Screen Icon
+ .gg-screen {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 22px;
+  height: 14px;
+  border: 2px solid;
+  border-radius: 3px;
+  margin-top: -4px;
+    // margin: 20px auto 0 auto;
+  color: $gray2;
+ }
+ 
+ .gg-screen::after,
+ .gg-screen::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+  top: 14px;
+  left: 4px
+ }
+ 
+ .gg-screen::before {
+  width: 2px;
+  height: 6px;
+  top: 10px;
+  left: 8px
+ } 
+
+ // Smartphone Icon
+ .gg-smartphone {
+  background: linear-gradient(to left, currentColor 5px, transparent 0) no-repeat 4px 10px/2px 2px;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 12px;
+  height: 18px;
+  border: 2px solid;
+  border-radius: 2px;
+  } 

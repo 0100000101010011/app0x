@@ -26,7 +26,8 @@ background-image: url("https://www.transparenttextures.com/patterns/rubber-grip.
 }
 
 .wrapper {
-    max-width: 270px;
+    max-width: 960px;
+    min-width: 270px;
     width: 270px;
     justify-self: center;
     align-self: center;
@@ -40,7 +41,14 @@ background-image: url("https://www.transparenttextures.com/patterns/rubber-grip.
     -webkit-box-shadow:0px 0px 15px 0 rgba(0,0,0,0.20);
     -moz-box-shadow: 0px 0px 15px 0 rgba(0,0,0,0.20);
     box-shadow: 0px 0px 15px 0 rgba(0,0,0,0.20);
+
+    transition: 0.1s ease;
 }
+
+.wrapper.scale {
+    width: 960px;
+    transition: 0.1s ease;
+  }
 
 .wrapper .table__row {
     overflow-x: scroll;
@@ -70,4 +78,20 @@ background-image: url("https://www.transparenttextures.com/patterns/rubber-grip.
     visibility: visible;
     height: 41px;
     transition: 0.1s ease;
+}
+
+.view-sizes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100px;
+    margin: 0 auto;
+}
+
+.view-sizes p {
+    justify-self: center;
+    align-self: center;
+}
+
+.view-sizes.hide {
+    display: none;
 }
