@@ -1,3 +1,10 @@
+.fixed {
+  position: fixed;
+    width: 270px;
+    background: #fff;
+    top: 0;
+}
+
 .wrapper.scale {
     width: 960px;
     transition: 0.1s ease;
