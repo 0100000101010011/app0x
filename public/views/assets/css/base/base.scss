@@ -15,12 +15,14 @@ $red1-transparent: rgba(242, 65, 58, 0.02);
 
 // Base
 
+// res https://www.w3schools.com/howto/howto_css_force_scrollbars.asp
 body {
   color: $gray3;
   outline: none;
   border-collapse: collapse;
   font-family: Arial, Verdana, Tahoma;
   font-size: 14px;
+  overflow: scroll; /* Show scrollbars */
 }
 
 footer p {
