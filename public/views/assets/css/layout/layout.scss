@@ -53,6 +53,7 @@ background-image: url("https://www.transparenttextures.com/patterns/rubber-grip.
 // this is hacky, using overflow here, figure out why those scrollbars are showing up and fix this on the user list page
 .user-details {
     overflow: hidden;
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 
 .basic-details {
