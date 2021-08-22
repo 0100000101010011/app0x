@@ -5,6 +5,10 @@ const tbodyRow1 = document.querySelectorAll('.tbody__row--1');
 const tableTbodyArray = Array.prototype.slice.call(tableTbody);
 const tbodyRow1Array = Array.prototype.slice.call(tbodyRow1);
 
+for (i = 0; i < 3; i++) {
+  tableTbody[i].querySelector('.tbody__row--2').classList.add('show');
+}
+
 for (i = 0; i < tableTbodyArray.length; i++) {
   tableTbodyArray[i]
     .querySelector('.tbody__row--1')
