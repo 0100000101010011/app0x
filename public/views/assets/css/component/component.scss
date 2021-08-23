@@ -4,6 +4,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 50px;
+  min-width: 270px;
+  width: 270px;
+  margin: 0 auto;
 }
 
 .component__nav > nav a {
@@ -35,6 +38,13 @@ footer p a {
   color: $gray1;
 }
 
+// Welcome Block
+
+.component__welcome {
+  width: 270px;
+  margin: 0 auto;
+}
+
 // Table List
 
 .component__table--list table {
@@ -46,10 +56,14 @@ footer p a {
   padding: 0.6em 0.4em;
 }
 
-
 .component__table--list > table > tbody > tr {
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.component__table--list > table > tbody > tr.tbody__row--2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .component__table--list > table > tbody > tr > td {
@@ -67,6 +81,13 @@ footer p a {
 
 .tbody__row--1 {
   cursor: pointer;
+}
+
+// Form
+
+.component__main .component__form {
+  width: 270px;
+    margin: 0 auto;
 }
 
 // View Select in Footer
