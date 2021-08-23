@@ -1,4 +1,4 @@
-# app0
+# app0x
 
 A SQL database manager with a snappy UI.
 
