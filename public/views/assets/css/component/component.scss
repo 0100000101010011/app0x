@@ -22,6 +22,19 @@ footer p a {
   color: $gray2;
 }
 
+.footer__afterwrapper {
+  max-width: 960px;
+    min-width: 270px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 0.7em;
+}
+
+.footer__afterwrapper a {
+  color: $gray1;
+}
+
 // Table List
 
 .component__table--list table {
