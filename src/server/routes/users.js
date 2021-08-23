@@ -3,9 +3,10 @@ const app = express();
 const database = require('../../../src/server/database/remote-mysql');
 // ...rest of the initial code omitted for simplicity.
 const { check, validationResult } = require('express-validator');
-const bodyParser = require('body-parser');
 
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
+// res https://stackoverflow.com/questions/66659450/getting-body-parser-is-deprecated-warning-in-vs-code-and-not-able-to-get-body-tr
+// res https://stackoverflow.com/questions/25471856/express-throws-error-as-body-parser-deprecated-undefined-extended
+const urlencodedParser = express.urlencoded({ extended: false });
 
 // utilities for dealing with file paths
 const path = require('path');
