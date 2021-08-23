@@ -8,7 +8,7 @@ app.set('views', path.join(__dirname, '../../public', 'views'));
 
 app.get('/', (req, res) => {
   res.render('index', {
-    title: 'Database Manager',
+    title: 'app0x',
   });
 });
 

@@ -1,6 +1,6 @@
 # app0x
 
-A SQL database manager with a snappy UI.
+A starter app with a snappy UI.
 
 ## Usage
 
