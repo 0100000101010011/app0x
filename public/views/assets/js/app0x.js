@@ -1,21 +1,23 @@
 // Show/Hide the user details and options in the table list of users
-const tableTbody = document.querySelectorAll('.table__tbody');
-const tbodyRow1 = document.querySelectorAll('.tbody__row--1');
+const tableTbody = document.querySelectorAll('.component__tbody');
+const tbodyRow1 = document.querySelectorAll('.component__tbody_row--1');
 
 const tableTbodyArray = Array.prototype.slice.call(tableTbody);
 const tbodyRow1Array = Array.prototype.slice.call(tbodyRow1);
 
 window.addEventListener('load', function () {
   for (i = 0; i < 3; i++) {
-    tableTbody[i].querySelector('.tbody__row--2').classList.add('show');
+    tableTbody[i]
+      .querySelector('.component__tbody_row--2')
+      .classList.add('show');
   }
 
   for (i = 0; i < tableTbodyArray.length; i++) {
     tableTbodyArray[i]
-      .querySelector('.tbody__row--1')
+      .querySelector('.component__tbody_row--1')
       .addEventListener('click', (e) => {
         e.currentTarget.parentNode
-          .querySelector('.tbody__row--2')
+          .querySelector('.component__tbody_row--2')
           .classList.toggle('show');
       });
   }
@@ -23,7 +25,7 @@ window.addEventListener('load', function () {
 
 // Scale the viewport
 const desktopIcon = document.querySelector('.gg-screen');
-const bodyEl = document.querySelector('.wrapper');
+const bodyEl = document.querySelector('.app');
 
 desktopIcon.addEventListener('click', function (e) {
   console.log(e.target);
@@ -31,7 +33,7 @@ desktopIcon.addEventListener('click', function (e) {
 });
 
 // If it's a mobile phone, hide the view size buttons
-const viewSizes = document.querySelector('.component__view--select');
+const viewSizes = document.querySelector('.component__nav--scaleview');
 
 // res https://coderwall.com/p/i817wa/one-line-function-to-detect-mobile-devices-with-javascript
 function isMobileDevice() {
@@ -67,7 +69,7 @@ function findOffset(element) {
 }
 
 window.onload = function () {
-  var stickyHeader = document.getElementById('sticky');
+  var stickyHeader = document.querySelector('.component__nav--sticky');
   var headerOffset = findOffset(stickyHeader);
 
   window.onscroll = function () {

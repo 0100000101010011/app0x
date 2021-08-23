@@ -1,9 +1,19 @@
-/* Compiles all .sass files into one final style.min.css file and puts it in css/_bundled */
+// Bundler
 
-@import 'base/base';
+// Compiles all .sass files into one final style.min.css file
+// Puts it in css/_bundled
 
-@import 'component/component';
+@import 'base/colors';
+@import 'base/reset';
+
+@import 'component/bar-top';
+@import 'component/footer';
+@import 'component/form';
 @import 'component/icon';
+@import 'component/scaleview';
+@import 'component/scrollbar';
+@import 'component/table-list';
+@import 'component/welcome';
 
 @import 'layout/layout';
 

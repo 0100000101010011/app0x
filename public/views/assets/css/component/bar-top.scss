@@ -1,0 +1,15 @@
+// Bar Top
+
+.component__nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 50px;
+  min-width: 270px;
+  width: 270px;
+  margin: 0 auto;
+}
+
+.component__nav a {
+  justify-self: center;
+  align-self: center;
+}

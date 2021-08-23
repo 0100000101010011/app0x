@@ -1,21 +1,17 @@
 <%- include('../templates/header') %>
 
-    <section class="component__table--list">
+    <section class="component__table component__table--list">
         <table>
             <tr>
-                <!-- <th>Edit</th>
-                <th>Delete</th> -->
                 <th>Name</th>
-                <!-- <th>Age</th> -->
                 <th>Email</th>
-                <!-- <th>ID</th> -->
             </tr>
 
             <% if (data) { %>
                 <% data.forEach(function(user){ %>
-                    <tbody class="table__tbody">
+                    <tbody class="component__tbody">
 
-                        <tr class="tbody__row--1">
+                        <tr class="component__tbody_row--1">
                             <td>
                                 <%= user.name %>
                             </td>
@@ -24,7 +20,7 @@
                             </td>
                         </tr>
 
-                        <tr class="tbody__row--2">
+                        <tr class="tbody__row--2 component__tbody_row--2">
 
                             <td><a href="/users/edit/<%= user.id %>"><i class="gg-pen"></i></a></td>
 
