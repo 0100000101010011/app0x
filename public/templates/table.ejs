@@ -21,12 +21,10 @@
                         <td>
                             <div>
                                 <form action="/users/delete/<%= user.id %>" method="post">
-                                    <button type="submit" name="delete" value='Delete'
-                                        onClick="return confirm('Are you sure you want to delete?')">
-                                        <i class="gg-remove"></i>
-                                    </button>
 
-                                    <input type="hidden" name="_method" value="DELETE">
+                                    <%- include('../templates/component__button--submit') %>
+
+                                        <input type="hidden" name="_method" value="DELETE">
                                 </form>
                             </div>
                         </td>

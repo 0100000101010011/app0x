@@ -18,27 +18,17 @@
     <div class="app">
 
         <!-- Bar Top -->
-        <section class="section__bar--top">
+        <%- include('../templates/section__bar--top.ejs') %>
 
-            <nav class="component__nav component__nav--sticky">
-                <a href="/">
-                    <i class="gg-home-alt"></i>
-                </a>
-                <a href="/users"><i class="gg-list"></i></a>
-                <a href="/users/add"><i class="gg-add"></i></a>
-            </nav>
+            <!-- Main -->
+            <section class="section__main">
 
-        </section>
+                <main class="component__main">
 
-        <!-- Main -->
-        <section class="section__main">
+                    <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="5" data-aos-duration="100"
+                        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                        data-aos-anchor-placement="top-center">
 
-            <main class="component__main">
-
-                <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="5" data-aos-duration="100"
-                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-                    data-aos-anchor-placement="top-center">
-
-                    <h1>
-                        <%= title %>
-                    </h1>
+                        <h1>
+                            <%= title %>
+                        </h1>

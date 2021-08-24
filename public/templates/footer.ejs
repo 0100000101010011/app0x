@@ -7,23 +7,20 @@
 
     <footer class="component__footer">
 
-        <nav class="component__nav--scaleview">
-            <!-- <p><i class="gg-smartphone"></i></p> -->
-            <p><i class="gg-screen"></i></p>
-        </nav>
+        <%- include('../templates/component__nav--scaleview') %>
 
     </footer>
 </section>
 </div>
-<div class="component__footer--outside">
-    <p><a href="//github.com/0100000101010011" target="_blank">0100000101010011</a></p>
-</div>
-<!-- End App -->
-<script src="/assets/js/app0x.js"></script>
-<script src="/assets/js/aos.min.js"></script>
-<script>
-    AOS.init();
-</script>
-</body>
 
-</html>
+<%- include('../templates/component__footer--outside') %>
+
+    <!-- End App -->
+    <script src="/assets/js/app0x.js"></script>
+    <script src="/assets/js/aos.min.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    </body>
+
+    </html>
