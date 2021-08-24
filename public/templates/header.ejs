@@ -18,17 +18,21 @@
     <div class="app">
 
         <!-- Bar Top -->
-        <%- include('../templates/section__bar--top.ejs') %>
+        <section class="section__bar--top">
 
-            <!-- Main -->
-            <section class="section__main">
+            <%- include('../templates/component__nav--sticky') %>
 
-                <main class="component__main">
+        </section>
 
-                    <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="5" data-aos-duration="100"
-                        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-                        data-aos-anchor-placement="top-center">
+        <!-- Main -->
+        <section class="section__main">
 
-                        <h1>
-                            <%= title %>
-                        </h1>
+            <main class="component__main">
+
+                <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="5" data-aos-duration="100"
+                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                    data-aos-anchor-placement="top-center">
+
+                    <h1>
+                        <%= title %>
+                    </h1>
