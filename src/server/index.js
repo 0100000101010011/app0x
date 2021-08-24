@@ -13,6 +13,6 @@ app.get('/', (req, res) => {
 });
 
 // use any static files in /views/assets folder, like css
-app.use('/views', express.static('public/views'));
+app.use('/assets', express.static('public/assets'));
 
 module.exports = app;
