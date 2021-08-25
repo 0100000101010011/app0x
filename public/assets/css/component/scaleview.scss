@@ -8,3 +8,23 @@
 .component__nav--scaleview p {
   justify-self: center;
 }
+
+.gg-shape-circle {
+  color: $green1;
+  justify-self: end;
+
+
+  width: 10px;
+  height: 10px;
+  border: 2px solid;
+}
+
+// styles for connected database button
+.icon__circle_database--connected {
+
+}
+
+// styles for reconnect database button, for when server goes off to reconnect
+.icon__circle_database--reconnect {
+
+}

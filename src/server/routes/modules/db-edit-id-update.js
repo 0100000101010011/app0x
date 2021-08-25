@@ -1,0 +1,45 @@
+const database = require('../../database/model/connect-remote-mysql');
+
+const dbEditIdUpdate = (req, res, next) => {
+  const errors = validationResult(req);
+
+  let user = {
+    id: req.params.id,
+    name: req.body.name,
+    age: req.body.age,
+    email: req.body.email,
+  };
+
+  if (!errors.isEmpty()) {
+    res.render('user/edit', {
+      title: 'Oops! May be a typo...',
+      id: req.params.id,
+      name: user.name,
+      age: user.age,
+      email: user.email,
+    });
+  } else {
+    database.then((connection) => {
+      connection.query(
+        'UPDATE `users` SET ? WHERE `id` = ' + req.params.id,
+        user,
+        (err, result, fields) => {
+          // if any error while executing above query, throw error
+          if (err) {
+            console.log(err);
+          } else {
+            res.render('user/edit', {
+              title: 'Success! User updated',
+              id: req.params.id,
+              name: user.name,
+              age: user.age,
+              email: user.email,
+            });
+          }
+        }
+      );
+    });
+  }
+};
+
+module.exports = dbEditIdUpdate;

@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 // require our routes
 // load our homepage
-const index = require('./src/server/index');
+const index = require('./src/server/routes/index');
 
 // load our users and database to access those users
 const users = require('./src/server/routes/users');

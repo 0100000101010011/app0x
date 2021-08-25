@@ -10,7 +10,7 @@ const ssh = new Client();
  */
 
 // import database config file with connection credentials
-const config = require('../config');
+const config = require('../../config');
 
 // package the connection to the db variable
 const db = new Promise((resolve, reject) => {
