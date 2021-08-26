@@ -24,7 +24,15 @@ const db = new Promise((resolve, reject) => {
         config.mysql.host,
         config.mysql.port,
         (err, stream) => {
+          // console.log('ForwardOut time');
           if (err) throw err; // SSH error: can also send error in promise ex. reject(err)
+
+          // this is a duplicate of above, refactor
+          if (err) {
+            throw err;
+          } else {
+            console.log('VM Connected');
+          }
 
           // connect to database
           let connection = mysql.createConnection({
@@ -36,7 +44,16 @@ const db = new Promise((resolve, reject) => {
 
           // send connection back in variable depending on success or not
           connection.connect((err) => {
+            // console.log(connection.status);
+            if (connection.state === 'disconnected') {
+              console.log('disconnected');
+              return respond(null, { status: 'fail', message: 'server down' });
+            } else {
+              console.log('Database Connected');
+            }
+
             // now we use connection() whenever we want to query the database
+            // console.log(reject(err) + ' ' + resolve(connection));
             return !err ? resolve(connection) : reject(err);
           });
         }

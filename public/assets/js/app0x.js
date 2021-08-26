@@ -69,7 +69,7 @@ function findOffset(element) {
 }
 
 window.onload = function () {
-  var stickyHeader = document.querySelector('.component__nav--sticky');
+  var stickyHeader = document.querySelector('.component__nav nav');
   var headerOffset = findOffset(stickyHeader);
 
   window.onscroll = function () {
@@ -78,9 +78,9 @@ window.onload = function () {
       document.documentElement.scrollTop || document.body.scrollTop;
 
     if (bodyScrollTop > headerOffset.top) {
-      stickyHeader.classList.add('fixed');
+      stickyHeader.classList.add('sticky');
     } else {
-      stickyHeader.classList.remove('fixed');
+      stickyHeader.classList.remove('sticky');
     }
   };
 };

@@ -1,0 +1,22 @@
+// styles for connect(ed) database button
+.component__button--connect {
+    display: grid;
+  }
+  
+  .component__button--connect button {
+    display: grid;
+    cursor: pointer;
+  }
+  
+  .component__button--connect button p {
+    justify-self: end;
+  }
+  
+  .gg-shape-circle {
+    color: $green1;
+    justify-self: end;
+  
+    width: 10px;
+    height: 10px;
+    border: 2px solid;
+  }

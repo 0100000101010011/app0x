@@ -1,4 +1,5 @@
-<section class="component__table component__table--list">
+<div class="component__table--list">
+
     <table>
 
         <% if (data) { %>
@@ -22,7 +23,7 @@
                             <div>
                                 <form action="/users/delete/<%= user.id %>" method="post">
 
-                                    <%- include('../templates/component__button--submit') %>
+                                    <%- include('../../../templates/component/button/submit') %>
 
                                         <input type="hidden" name="_method" value="DELETE">
                                 </form>
@@ -42,4 +43,5 @@
                 <% }) %>
                     <% } %>
     </table>
-</section>
+
+</div>

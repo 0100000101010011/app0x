@@ -2,6 +2,10 @@
 
 .component__nav {
   display: grid;
+}
+
+.component__nav nav {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 50px;
   min-width: 270px;
@@ -9,7 +13,7 @@
   justify-self: center;
 }
 
-.component__nav a {
+.component__nav nav a {
   justify-self: center;
   align-self: center;
 }
