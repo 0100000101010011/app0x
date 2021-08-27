@@ -19,6 +19,7 @@ const dbAddUser = (req, res) => {
       name: user.name,
       age: user.age,
       email: user.email,
+      status: 'on',
     });
 
     // need error messages to show on the page here
@@ -40,6 +41,7 @@ const dbAddUser = (req, res) => {
               name: '',
               age: '',
               email: '',
+              status: 'off',
             });
           } else {
             res.render('user/add', {
@@ -47,6 +49,7 @@ const dbAddUser = (req, res) => {
               name: user.name,
               age: user.age,
               email: user.email,
+              status: 'on',
             });
           }
         }

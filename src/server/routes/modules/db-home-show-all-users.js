@@ -8,11 +8,13 @@ const dbHomeShowAllUsers = (req, res, next) => {
         res.render('user/list', {
           title: 'User List',
           data: '',
+          status: 'off',
         });
       } else {
         res.render('user/list', {
           title: 'User List',
           data: result,
+          status: 'on',
         });
       }
     });

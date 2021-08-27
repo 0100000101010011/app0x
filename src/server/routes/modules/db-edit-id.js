@@ -17,6 +17,7 @@ const dbEditId = (req, res, next) => {
             name: rows[0].name,
             age: rows[0].age,
             email: rows[0].email,
+            status: 'on',
           });
         }
       }

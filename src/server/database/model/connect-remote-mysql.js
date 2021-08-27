@@ -15,21 +15,25 @@ const config = require('../../config');
 // package the connection to the db variable
 const db = new Promise((resolve, reject) => {
   // ssh shell into the virtual server (vm)
+  ssh.on('error', function (err) {
+    console.log('SSH - Connection Error: ' + err);
+  });
+
   ssh
     .on('ready', () => {
-      // connect to mysql
+      console.log('SSH - Connection Status: Connected');
+
       ssh.forwardOut(
         '',
         '',
         config.mysql.host,
         config.mysql.port,
         (err, stream) => {
-          // console.log('ForwardOut time');
           if (err) throw err; // SSH error: can also send error in promise ex. reject(err)
 
           // this is a duplicate of above, refactor
           if (err) {
-            throw err;
+            // throw err;
           } else {
             console.log('VM Connected');
           }
@@ -44,16 +48,7 @@ const db = new Promise((resolve, reject) => {
 
           // send connection back in variable depending on success or not
           connection.connect((err) => {
-            // console.log(connection.status);
-            if (connection.state === 'disconnected') {
-              console.log('disconnected');
-              return respond(null, { status: 'fail', message: 'server down' });
-            } else {
-              console.log('Database Connected');
-            }
-
             // now we use connection() whenever we want to query the database
-            // console.log(reject(err) + ' ' + resolve(connection));
             return !err ? resolve(connection) : reject(err);
           });
         }
@@ -65,6 +60,8 @@ const db = new Promise((resolve, reject) => {
       port: config.server.port,
       username: config.server.user,
       password: config.server.password,
+      // set time out to 50 milliseconds
+      readyTimeout: 500,
     });
 });
 

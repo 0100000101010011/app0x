@@ -14,12 +14,14 @@ const dbEditIdUpdate = (req, res, next) => {
   };
 
   if (!errors.isEmpty()) {
+    // if fields are empty
     res.render('user/edit', {
       title: 'Oops! May be a typo...',
       id: req.params.id,
       name: user.name,
       age: user.age,
       email: user.email,
+      status: 'on',
     });
   } else {
     database.then((connection) => {
@@ -37,6 +39,7 @@ const dbEditIdUpdate = (req, res, next) => {
               name: user.name,
               age: user.age,
               email: user.email,
+              status: 'on',
             });
           }
         }

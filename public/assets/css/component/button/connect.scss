@@ -9,13 +9,10 @@
   }
   
   .component__button--connect button p {
-    justify-self: end;
+    justify-self: center;
   }
   
-  .gg-shape-circle {
-    color: $green1;
-    justify-self: end;
-  
+  .gg-shape-circle {  
     width: 10px;
     height: 10px;
     border: 2px solid;

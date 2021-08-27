@@ -34,11 +34,10 @@
 
 // server is on
 .on {
-
-
-// server is off
+  color: $green1;
 }
 
+// server is off
 .off {
-
+  color: -internal-light-dark(black, white);
 }
