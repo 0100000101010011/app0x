@@ -10,7 +10,7 @@ const ssh = new Client();
  */
 
 // import database config file with connection credentials
-const config = require('../../config');
+const config = require('../../config/credentials-remote');
 
 // package the connection to the db variable
 const db = new Promise((resolve, reject) => {
@@ -21,7 +21,9 @@ const db = new Promise((resolve, reject) => {
 
   ssh
     .on('ready', () => {
-      console.log('SSH - Connection Status: Connected');
+      console.log(
+        'SSH - Connection Status: Connected <-- connect-remote-mysql.js'
+      );
 
       ssh.forwardOut(
         '',
@@ -35,7 +37,9 @@ const db = new Promise((resolve, reject) => {
           if (err) {
             // throw err;
           } else {
-            console.log('VM Connected');
+            console.log(
+              'VM - Connection Status: Connected <-- connect-remote-mysql.js'
+            );
           }
 
           // connect to database

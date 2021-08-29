@@ -1,14 +1,14 @@
 // styles for connect(ed) database button
-.component__button--connect {
+  .component__button--connect form {
     display: grid;
   }
   
-  .component__button--connect button {
+  .component__button--connect form button {
     display: grid;
     cursor: pointer;
   }
   
-  .component__button--connect button p {
+  .component__button--connect form button p {
     justify-self: center;
   }
   

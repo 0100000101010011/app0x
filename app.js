@@ -3,6 +3,8 @@ const express = require('express');
 
 const app = express();
 
+// control center or deck, command station ?
+
 // parse any incoming JSON
 // ref https://stackoverflow.com/questions/66525078/bodyparser-is-deprecated
 app.use(express.urlencoded({ extended: true }));

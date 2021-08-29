@@ -1,7 +1,7 @@
 // ...rest of the initial code omitted for simplicity.
 const { check, validationResult } = require('express-validator');
 
-const database = require('../../database/model/connect-remote-mysql');
+const database = require('../../database/model/remote-mysql-connect');
 
 const dbEditIdUpdate = (req, res, next) => {
   const errors = validationResult(req);

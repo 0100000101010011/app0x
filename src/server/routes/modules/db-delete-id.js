@@ -1,4 +1,4 @@
-const database = require('../../database/model/connect-remote-mysql');
+const database = require('../../database/model/remote-mysql-connect');
 
 const dbDeleteId = (req, res, next) => {
   let user = {
