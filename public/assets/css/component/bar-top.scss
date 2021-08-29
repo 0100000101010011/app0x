@@ -1,7 +1,13 @@
 // Bar Top
 
 .component__nav {
-  display: grid;
+  // this is a fix for the sticky header to stay centered when .scale view is on
+  // it's really not even needed, it's only for desktop view
+  // this is for if we have the scale option in mobile, rn we don't
+  display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 
 .component__nav nav {

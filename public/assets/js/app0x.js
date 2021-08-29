@@ -6,13 +6,13 @@ const tableTbodyArray = Array.prototype.slice.call(tableTbody);
 const tbodyRow1Array = Array.prototype.slice.call(tbodyRow1);
 
 window.addEventListener('load', function () {
-  for (i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i++) {
     tableTbody[i]
       .querySelector('.component__tbody_row--2')
       .classList.add('show');
   }
 
-  for (i = 0; i < tableTbodyArray.length; i++) {
+  for (let i = 0; i < tableTbodyArray.length; i++) {
     tableTbodyArray[i]
       .querySelector('.component__tbody_row--1')
       .addEventListener('click', (e) => {

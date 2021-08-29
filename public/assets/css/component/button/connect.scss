@@ -9,9 +9,10 @@
       // disable blue highlight
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
-  
-  .component__button--connect form button p {
+
+  .component__button--connect form button span {
     justify-self: center;
+    padding: 15px 0 0 0;
   }
   
   .gg-shape-circle {  

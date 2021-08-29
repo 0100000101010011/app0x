@@ -12,13 +12,13 @@ app.set('views', path.join(__dirname, '../../../public', 'views'));
 app.use('/assets', express.static('public/assets'));
 
 // bring in the index-content.js function/module
-const indexContent = require('./modules/index-content');
+const indexContent = require('./templates/index-content');
 // display it on the index page
 app.get('/', indexContent);
 
 // toggle server status
 // bring in the db-status.js function/module
-const dbStatus = require('./modules/db-status');
+const dbStatus = require('./templates/db-status');
 app.post('/database', dbStatus);
 
 module.exports = app;

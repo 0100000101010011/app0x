@@ -21,12 +21,12 @@ app.set('views', path.join(__dirname, '../../../public', 'views'));
 // CREATE
 
 // bring in the db-add-user-blank-inputs.js function/module
-const dbAddUserBlankInputs = require('./modules/db-add-user-blank-inputs');
+const dbAddUserBlankInputs = require('./templates/db-add-user-blank-inputs');
 // and display it on the add page
 app.get('/add', dbAddUserBlankInputs);
 
 // bring in the db-add-user.js function/module
-const dbAddUser = require('./modules/db-add-user');
+const dbAddUser = require('./templates/db-add-user');
 // add the user to the database using validation checks
 app.post(
   '/add',
@@ -53,19 +53,19 @@ app.post(
 // READ
 
 // bring in the db-select-all.js function/module
-const dbHomeShowAllUsers = require('./modules/db-home-show-all-users');
+const dbHomeShowAllUsers = require('./templates/db-home-show-all-users');
 // and display it on the homepage
 app.get('/', dbHomeShowAllUsers);
 
 // UPDATE
 
 // bring in the db-edit-id.js function/module
-const dbEditId = require('./modules/db-edit-id');
+const dbEditId = require('./templates/db-edit-id');
 // use it
 app.get('/edit/(:id)', dbEditId);
 
 // bring in the db-edit-id-update.js function/module
-const dbEditIdUpdate = require('./modules/db-edit-id-update');
+const dbEditIdUpdate = require('./templates/db-edit-id-update');
 // use it
 app.post(
   '/edit/(:id)',
@@ -81,7 +81,7 @@ app.post(
 // DELETE
 
 // bring in the db-delete-id.js function/module
-const dbDeleteId = require('./modules/db-delete-id');
+const dbDeleteId = require('./templates/db-delete-id');
 // use it
 app.post('/delete/(:id)', dbDeleteId);
 
