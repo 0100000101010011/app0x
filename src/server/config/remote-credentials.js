@@ -1,4 +1,3 @@
-// should really be called credentials.js instead of index.js
 const config = {
   server: {
     // configs for connecting to server-mysql database server vm in NUC VMWare

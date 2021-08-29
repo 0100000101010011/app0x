@@ -1,25 +1,23 @@
 // ...rest of the initial code omitted for simplicity.
 const { check, validationResult } = require('express-validator');
 
-const database = require('../../database/model/remote-mysql-connect');
+const database = require('../../../database/model/remote-connect-mysql');
 
-const version = require('../../../../package.json').version;
+const version = require('../../../../../package.json').version;
 
-const dbEditIdUpdate = (req, res, next) => {
+const queryAddUser = (req, res) => {
   const errors = validationResult(req);
 
   let user = {
-    id: req.params.id,
     name: req.body.name,
     age: req.body.age,
     email: req.body.email,
   };
 
+  // this is kind of an unideal way to do this kind of check to make sure all fields are filled in, but it'll do the job for now
   if (!errors.isEmpty()) {
-    // if fields are empty
-    res.render('user/edit', {
+    res.render('user/add', {
       title: 'Oops! May be a typo...',
-      id: req.params.id,
       name: user.name,
       age: user.age,
       email: user.email,
@@ -29,16 +27,22 @@ const dbEditIdUpdate = (req, res, next) => {
   } else {
     database.then((connection) => {
       connection.query(
-        'UPDATE `users` SET ? WHERE `id` = ' + req.params.id,
+        'INSERT INTO `user_test`.`users` SET ? ',
         user,
-        (err, result, fields) => {
+        (err, result) => {
           // if any error while executing above query, throw error
           if (err) {
-            console.log(err);
+            res.render('user/add', {
+              title: "Oops! can't connect to database",
+              name: '',
+              age: '',
+              email: '',
+              status: 'off',
+              version: version,
+            });
           } else {
-            res.render('user/edit', {
-              title: 'Success! User updated',
-              id: req.params.id,
+            res.render('user/add', {
+              title: 'Success! User Added',
               name: user.name,
               age: user.age,
               email: user.email,
@@ -52,4 +56,4 @@ const dbEditIdUpdate = (req, res, next) => {
   }
 };
 
-module.exports = dbEditIdUpdate;
+module.exports = queryAddUser;

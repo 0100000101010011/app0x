@@ -1,23 +1,11 @@
 const express = require('express');
 const app = express();
 
-const database = require('../../database/model/remote-mysql-connect');
+const database = require('../../../database/model/remote-connect-mysql');
 
-const version = require('../../../../package.json').version;
-console.log(version);
+const version = require('../../../../../package.json').version;
 
-// app.get('index', function (req, res) {
-//   if (version) {
-//     res.render('index', {
-//       title: 'app0x',
-//       status: 'on',
-//       version: version,
-//     });
-//   } else {
-//   }
-// });
-
-const indexContent = (req, res) => {
+const renderIndex = (req, res) => {
   // connect to the status table
   database.then((connection, err) => {
     // query whether it's 1 (on) or not (0)
@@ -38,4 +26,4 @@ const indexContent = (req, res) => {
   });
 };
 
-module.exports = indexContent;
+module.exports = renderIndex;

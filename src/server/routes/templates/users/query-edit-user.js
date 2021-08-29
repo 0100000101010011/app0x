@@ -1,8 +1,8 @@
-const database = require('../../database/model/remote-mysql-connect');
+const database = require('../../../database/model/remote-connect-mysql');
 
-const version = require('../../../../package.json').version;
+const version = require('../../../../../package.json').version;
 
-const dbEditId = (req, res, next) => {
+const queryEditUser = (req, res, next) => {
   database.then((connection, err) => {
     // query whether it's 1 (on) or not (0)
     connection.query('SELECT * FROM status', (err, rows) => {
@@ -37,4 +37,4 @@ const dbEditId = (req, res, next) => {
   });
 };
 
-module.exports = dbEditId;
+module.exports = queryEditUser;

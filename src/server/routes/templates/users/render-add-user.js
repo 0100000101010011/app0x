@@ -1,8 +1,8 @@
-const database = require('../../database/model/remote-mysql-connect');
+const database = require('../../../database/model/remote-connect-mysql');
 
-const version = require('../../../../package.json').version;
+const version = require('../../../../../package.json').version;
 
-const dbAddUserBlankInputs = (req, res, next) => {
+const renderAddUser = (req, res, next) => {
   // connect to the status table
   database.then((connection, err) => {
     // query whether it's 1 (on) or not (0)
@@ -26,4 +26,4 @@ const dbAddUserBlankInputs = (req, res, next) => {
   });
 };
 
-module.exports = dbAddUserBlankInputs;
+module.exports = renderAddUser;

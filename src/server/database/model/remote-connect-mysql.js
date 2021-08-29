@@ -10,7 +10,7 @@ const ssh = new Client();
  */
 
 // import database config file with connection credentials
-const config = require('../../config/credentials-remote');
+const config = require('../../config/remote-credentials');
 
 // package the connection to the db variable
 const db = new Promise((resolve, reject) => {
@@ -21,9 +21,7 @@ const db = new Promise((resolve, reject) => {
 
   ssh
     .on('ready', () => {
-      console.log(
-        'SSH - Connection Status: Connected <-- connect-remote-mysql.js'
-      );
+      console.log('SSH - Connection Status: Connected');
 
       ssh.forwardOut(
         '',
@@ -31,15 +29,10 @@ const db = new Promise((resolve, reject) => {
         config.mysql.host,
         config.mysql.port,
         (err, stream) => {
-          if (err) throw err; // SSH error: can also send error in promise ex. reject(err)
-
-          // this is a duplicate of above, refactor
           if (err) {
-            // throw err;
+            throw err;
           } else {
-            console.log(
-              'VM - Connection Status: Connected <-- connect-remote-mysql.js'
-            );
+            console.log('VM - Connection Status: Connected');
           }
 
           // connect to database
@@ -51,8 +44,8 @@ const db = new Promise((resolve, reject) => {
           });
 
           // send connection back in variable depending on success or not
-          connection.connect((err) => {
-            // now we use connection() whenever we want to query the database
+          connection.connect(() => {
+            // now we use .connection() (e.g. datase.connection(); whenever we want to query the database
             return !err ? resolve(connection) : reject(err);
           });
         }
@@ -64,7 +57,7 @@ const db = new Promise((resolve, reject) => {
       port: config.server.port,
       username: config.server.user,
       password: config.server.password,
-      // set time out to 50 milliseconds
+      // set time out
       readyTimeout: 500,
     });
 });

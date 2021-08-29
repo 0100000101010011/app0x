@@ -1,6 +1,6 @@
 {
   "name": "app0x",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A starter app with a snappy UI.",
   "main": "app.js",
   "scripts": {

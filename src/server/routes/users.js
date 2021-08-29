@@ -3,8 +3,6 @@ const app = express();
 // ...rest of the initial code omitted for simplicity.
 const { check, validationResult } = require('express-validator');
 
-// res https://stackoverflow.com/questions/66659450/getting-body-parser-is-deprecated-warning-in-vs-code-and-not-able-to-get-body-tr
-// res https://stackoverflow.com/questions/25471856/express-throws-error-as-body-parser-deprecated-undefined-extended
 const urlencodedParser = express.urlencoded({ extended: false });
 
 // utilities for dealing with file paths
@@ -20,14 +18,14 @@ app.set('views', path.join(__dirname, '../../../public', 'views'));
 
 // CREATE
 
-// bring in the db-add-user-blank-inputs.js function/module
-const dbAddUserBlankInputs = require('./templates/db-add-user-blank-inputs');
-// and display it on the add page
-app.get('/add', dbAddUserBlankInputs);
+// call module
+const renderAddUser = require('./templates/users/render-add-user');
+// use module to render data on the add rout/page
+app.get('/add', renderAddUser);
 
-// bring in the db-add-user.js function/module
-const dbAddUser = require('./templates/db-add-user');
-// add the user to the database using validation checks
+// call module
+const queryAddUser = require('./templates/users/query-add-user');
+// use module to post user data to the database route
 app.post(
   '/add',
   urlencodedParser,
@@ -47,26 +45,26 @@ app.post(
       .trim()
       .escape(),
   ],
-  dbAddUser
+  queryAddUser
 );
 
 // READ
 
-// bring in the db-select-all.js function/module
-const dbHomeShowAllUsers = require('./templates/db-home-show-all-users');
-// and display it on the homepage
-app.get('/', dbHomeShowAllUsers);
+// call module
+const queryUserList = require('./templates/users/query-user-list');
+// use module to render data on the index/homepage
+app.get('/', queryUserList);
 
 // UPDATE
 
-// bring in the db-edit-id.js function/module
-const dbEditId = require('./templates/db-edit-id');
-// use it
-app.get('/edit/(:id)', dbEditId);
+// call module
+const queryEditUser = require('./templates/users/query-edit-user');
+// use module to query the database for user detals by user id
+app.get('/edit/(:id)', queryEditUser);
 
-// bring in the db-edit-id-update.js function/module
-const dbEditIdUpdate = require('./templates/db-edit-id-update');
-// use it
+// call module
+const queryEditUserUpdate = require('./templates/users/query-edit-user-update');
+// use module to post updated user data to the database
 app.post(
   '/edit/(:id)',
   urlencodedParser,
@@ -75,14 +73,14 @@ app.post(
     check('age', 'optional').isLength({ max: 2 }).optional(),
     check('email').not().isEmpty().isEmail().normalizeEmail().trim(),
   ],
-  dbEditIdUpdate
+  queryEditUserUpdate
 );
 
 // DELETE
 
-// bring in the db-delete-id.js function/module
-const dbDeleteId = require('./templates/db-delete-id');
-// use it
+// call module
+const dbDeleteId = require('./templates/users/query-delete-user');
+// use module to query delete user by id to database
 app.post('/delete/(:id)', dbDeleteId);
 
 module.exports = app;

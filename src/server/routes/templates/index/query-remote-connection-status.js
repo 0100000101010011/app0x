@@ -1,6 +1,6 @@
-const database = require('../../database/model/remote-mysql-connect');
+const database = require('../../../database/model/remote-connect-mysql');
 
-const dbStatus = (req, res) => {
+const remoteConnectionStatus = (req, res) => {
   database.then((connection) => {
     connection.query('SELECT * FROM status', (err, rows) => {
       console.log(rows);
@@ -24,4 +24,4 @@ const dbStatus = (req, res) => {
   });
 };
 
-module.exports = dbStatus;
+module.exports = remoteConnectionStatus;
