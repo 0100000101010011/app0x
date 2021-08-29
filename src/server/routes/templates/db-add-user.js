@@ -3,6 +3,8 @@ const { check, validationResult } = require('express-validator');
 
 const database = require('../../database/model/remote-mysql-connect');
 
+const version = require('../../../../package.json').version;
+
 const dbAddUser = (req, res) => {
   const errors = validationResult(req);
 
@@ -20,6 +22,7 @@ const dbAddUser = (req, res) => {
       age: user.age,
       email: user.email,
       status: 'on',
+      version: version,
     });
   } else {
     database.then((connection) => {
@@ -35,6 +38,7 @@ const dbAddUser = (req, res) => {
               age: '',
               email: '',
               status: 'off',
+              version: version,
             });
           } else {
             res.render('user/add', {
@@ -43,6 +47,7 @@ const dbAddUser = (req, res) => {
               age: user.age,
               email: user.email,
               status: 'on',
+              version: version,
             });
           }
         }

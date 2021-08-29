@@ -1,5 +1,7 @@
 const database = require('../../database/model/remote-mysql-connect');
 
+const version = require('../../../../package.json').version;
+
 const dbAddUserBlankInputs = (req, res, next) => {
   // connect to the status table
   database.then((connection, err) => {
@@ -14,6 +16,7 @@ const dbAddUserBlankInputs = (req, res, next) => {
           age: '',
           email: '',
           status: 'on',
+          version: version,
         });
       } else if (rows[0].status == 0) {
         // AND THEN HERE YOU'LL RENDER A BLANK ADD USER FORM, OR ONE THEY CAN'T ADD ANYTHING TO, DISABLED FIELDS AND BUTTONS

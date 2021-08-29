@@ -1,5 +1,7 @@
 const database = require('../../database/model/remote-mysql-connect');
 
+const version = require('../../../../package.json').version;
+
 const dbEditId = (req, res, next) => {
   database.then((connection, err) => {
     // query whether it's 1 (on) or not (0)
@@ -22,6 +24,7 @@ const dbEditId = (req, res, next) => {
                 age: rows[0].age,
                 email: rows[0].email,
                 status: 'on',
+                version: version,
               });
             }
           }

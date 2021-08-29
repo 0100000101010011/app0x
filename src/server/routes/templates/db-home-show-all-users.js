@@ -1,5 +1,7 @@
 const database = require('../../database/model/remote-mysql-connect');
 
+const version = require('../../../../package.json').version;
+
 const dbHomeShowAllUsers = (req, res, next) => {
   // connect to the status table
   database.then((connection, err) => {
@@ -18,12 +20,14 @@ const dbHomeShowAllUsers = (req, res, next) => {
                   title: 'User List',
                   data: '',
                   status: 'off',
+                  version: version,
                 });
               } else {
                 res.render('user/list', {
                   title: 'User List',
                   data: result,
                   status: 'on',
+                  version: version,
                 });
               }
             }

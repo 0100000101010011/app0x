@@ -8,8 +8,11 @@
   margin: 0 auto;
   margin-top: 1px;
   font-size: 0.6em;
+  color: $gray1;
 }
 
-.component__footer--outer a {
+.component__footer--outer p, 
+.component__footer--outer p a {
   color: $gray1;
+  text-align: center;
 }
