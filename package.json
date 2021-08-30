@@ -1,6 +1,6 @@
 {
   "name": "app0x",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A starter app with a snappy UI.",
   "main": "app.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "npm run prettier && npm run compile && nodemon app",
     "app": "npm run prettier && npm run compile && node app"
   },
-  "author": "Alvin Sanchez",
+  "author": "_a.online",
   "homepage": "https://github.com/0100000101010011",
   "license": "ISC",
   "bugs": {

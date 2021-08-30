@@ -46,6 +46,18 @@
   transition: 0.1s ease;
 }
 
+.component__tbody_row--1 td {
+  overflow-x: scroll;
+}
+
+.component__tbody_row--1 td::-webkit-scrollbar {
+  height: 8px;
+}
+
+.component__tbody_row--1 td::-webkit-scrollbar-thumb {
+  background-color: $gray1;
+}
+
 // stripe the table rows
 .component__table--list tbody.component__tbody:nth-child(even)>tr.component__tbody_row--1 {
   background-color: $gray1;

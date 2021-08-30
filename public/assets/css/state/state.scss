@@ -3,7 +3,7 @@
 .sticky {
   position: fixed;
   width: 270px;
-  background: #fff;
+  background: $white1;
   top: 0;
   z-index: 1;
 }
@@ -41,4 +41,8 @@
 .off {
   color: -internal-light-dark(black, white);
   color: $gray2;
+}
+
+.dark {
+  
 }
