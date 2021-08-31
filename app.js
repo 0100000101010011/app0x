@@ -27,5 +27,10 @@ app.use('/', index);
 // the users list page
 app.use('/users', users);
 
+// redirect all 404s to homepage
+app.all('*', (req, res) => {
+  res.status(404).redirect('/');
+});
+
 // open up http to url in browser (https is port 8080)
 app.listen(3000);

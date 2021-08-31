@@ -13,7 +13,9 @@ const renderIndex = (req, res) => {
       // if it is 1
       if (rows[0].status == 1) {
         // render with status property/variable set to 'on' to turn light on green
-        res.render('index', { title: 'app0x', status: 'on', version: version });
+        res
+          .status(200)
+          .render('index', { title: 'app0x', status: 'on', version: version });
       } else if (rows[0].status == 0) {
         // render with status property/variable set to 'off' to turn light on red
         res.render('index', {
